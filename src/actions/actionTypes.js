@@ -1,0 +1,1 @@
+export const MOVE_TASK = 'TASK_MOVE';
