@@ -3,6 +3,9 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import Board from './Board';
+import AddTaskForm from './AddTaskForm';
+import ProgressBar from './ProgressBar';
+import Trash from './Trash';
 import * as taskActions from '../actions/taskActions';
 
 class KanbanBoard extends React.Component {
@@ -19,9 +22,29 @@ class KanbanBoard extends React.Component {
         );
     }
     render() {
+        const {boards} = this.props; 
+        const addToBoardId = boards[0].id;
+        const totalTasks = boards.reduce((result, board) => {
+            return board.tasks.length + result;
+        }, 0);
+        const completedTasks= boards[boards.length -1].tasks.length;
         return (
             <div>
-                {this.props.boards.map(this.renderBoard)}
+                <h2>React</h2>
+                <div>
+                    <div className="third">
+                        <AddTaskForm addTask={this.props.actions.addTask} boardId={addToBoardId} />
+                    </div>
+                    <div className="third">
+                        <ProgressBar total={totalTasks} complete={completedTasks} />
+                    </div>
+                    <div className="third">
+                        <Trash removeTask={this.props.actions.removeTask} />
+                    </div>
+                </div>
+                <div>
+                    {boards.map(this.renderBoard)}
+                </div>
             </div>
         );
     }

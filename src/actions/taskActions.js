@@ -7,3 +7,17 @@ export function moveTask(taskId, boardId) {
         boardId
     };
 }
+
+export function addTask(task) {
+    return {
+        type: types.ADD_TASK,
+        task: Object.assign({}, task)
+    };
+}
+
+export function removeTask(taskId) {
+    return {
+        type: types.REMOVE_TASK,
+        taskId
+    };
+}

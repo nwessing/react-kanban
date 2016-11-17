@@ -24,7 +24,7 @@ class Board extends React.Component {
         const {board} = this.props;
         return (
             <div>
-                <h3 className="center">{board.name}</h3>
+                <h3 className="center">{board.name} ({board.tasks.length})</h3>
                 <div className="board" onDragOver={this.onDragOver} onDrop={this.onDrop}>
                     {board.tasks.map(this.renderTask)}
                 </div>
