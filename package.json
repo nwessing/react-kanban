@@ -1,12 +1,12 @@
 {
   "name": "react-kanban",
   "version": "1.0.0",
-  "description": "",
+  "description": "Kanban board app written using React and Redux",
   "main": "index.js",
   "scripts": {
     "start": "babel-node tools/srcServer.js"
   },
-  "author": "",
+  "author": "Nick Wessing",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.18.0",
