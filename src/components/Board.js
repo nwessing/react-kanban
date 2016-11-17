@@ -18,7 +18,7 @@ class Board extends React.Component {
         this.props.moveTask(taskId, this.props.board.id);
     }
     renderTask(task) {
-        return <Task key={task.id} data-id={task.id} task={task} />;
+        return <Task key={task.id} task={task} />;
     }
     render() {
         const {board} = this.props;
